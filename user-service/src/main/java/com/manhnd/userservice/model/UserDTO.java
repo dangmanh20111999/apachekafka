@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class UserDTO {
-
+	static UUID uuid= UUID.randomUUID();
 	private String ids;
 	private String firstname;
 	private String lastname;
@@ -15,7 +17,6 @@ public class UserDTO {
 	private String authoritynames;
 	private String username;
 	private String address;
-	@JsonIgnore
 	private String password;
 
 

@@ -12,11 +12,11 @@ import org.springframework.data.relational.core.mapping.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
-public class User{
+@Table(name = "users")
+public class User {
 
 	private static final long serialVersionUID = 3592549577903104696L;
-	@Id
+//	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String ids;
 	private String firstname;
@@ -26,8 +26,6 @@ public class User{
 	private String authoritynames;
 	private String username;
 	private String address;
-	
-	@JsonIgnore
 	private String password;	
 	
 	
@@ -94,7 +92,7 @@ public class User{
 	public void setAuthoritynames(String authoritynames) {
 		this.authoritynames = authoritynames;
 	}
-	
+
 
 }
 
