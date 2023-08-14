@@ -1,12 +1,13 @@
-package com.manhnd.userservice;
+package com.manhnd.commonservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserServiceApplication {
+public class CommonserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserServiceApplication.class, args);
+		SpringApplication.run(CommonserviceApplication.class, args);
 	}
+
 }
