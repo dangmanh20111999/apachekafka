@@ -1,11 +1,13 @@
 package com.manhnd.profileservice.service.Impl;
 
+import com.manhnd.commonservice.commons.CommonException;
 import com.manhnd.profileservice.dto.ProfileDTO;
 import com.manhnd.profileservice.repository.ProfileRepository;
 import com.manhnd.profileservice.service.ProfileService;
 import com.manhnd.profileservice.utils.Constant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 
@@ -23,16 +25,19 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public Flux<ProfileDTO> getAllProfiles() {
+
+
         return profileRepository.findAll()
-                .map(dto -> ProfileDTO.entityToDto(dto))
-                .switchIfEmpty(Mono.error(new RuntimeException("123")));
+                .map(ProfileDTO::entityToDto)
+                .switchIfEmpty(Mono.error(new CommonException("PF01","Empty profile list !", HttpStatus.NOT_FOUND)));
     }
 
     @Override
     public Mono<ProfileDTO> getProfileById(Long id) {
+        log.info(String.valueOf(new CommonException("00","SS", HttpStatus.OK)));
         return profileRepository.findById(id)
-                .map(dto -> ProfileDTO.entityToDto(dto))
-                .switchIfEmpty(Mono.error(new RuntimeException("456")));
+                .map(ProfileDTO::entityToDto)
+                .switchIfEmpty(Mono.error(new CommonException("PF03","Empty profile list !", HttpStatus.NOT_FOUND)));
     }
 
     @Override
@@ -46,7 +51,7 @@ public class ProfileServiceImpl implements ProfileService {
     public Mono<ProfileDTO> saveProfile(ProfileDTO profileDTO) {
         return checkDuplicateEmail(profileDTO.getEmail()).flatMap(aBoolean -> {
             if (Boolean.TRUE.equals(aBoolean)) {
-                return Mono.error(new RuntimeException("Duplicate Profile"));
+                return Mono.error(new CommonException("PF02","Duplicate profile !", HttpStatus.BAD_REQUEST));
             }
             else {
                 profileDTO.setStatus(Constant.STATUS_PROFILE_PENDING);
