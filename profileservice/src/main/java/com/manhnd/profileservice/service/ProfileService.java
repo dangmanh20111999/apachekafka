@@ -13,5 +13,8 @@ public interface ProfileService {
     Mono<Boolean> checkDuplicateEmail(String email);
 
     Mono<ProfileDTO> saveProfile(ProfileDTO profileDTO);
+    Mono<ProfileDTO> updateStatusProfile(ProfileDTO profileDTO);
+
+    Mono<ProfileDTO> updateInitialBlance(ProfileDTO profileDTO);
 
 }

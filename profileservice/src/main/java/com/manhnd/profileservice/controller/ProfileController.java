@@ -41,4 +41,9 @@ public class ProfileController {
     public ResponseEntity<Mono<ProfileDTO>> saveProfile(@RequestBody ProfileDTO profileDTO) {
         return ResponseEntity.ok(profileService.saveProfile(profileDTO));
     }
+
+    @PostMapping(value = "/updateInitialBlanceByEmail")
+    public ResponseEntity<Mono<ProfileDTO>> updateInitialBlanceByEmail(@RequestBody ProfileDTO profileDTO) {
+        return ResponseEntity.ok(profileService.updateInitialBlance(profileDTO));
+    }
 }

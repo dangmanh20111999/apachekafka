@@ -2,6 +2,7 @@ package com.manhnd.commonservice.utils;
 
 public class Constant {
     public static final String PROFILE_ONBOARDING_TOPIC = "profileOnboarding";
+    public static final String UPDATE_INITIALBLANCE_TOPIC = "updateInitialBlance";
     public static final String PROFILE_ONBOARDED_TOPIC = "profileOnboarded";
 
     public static final String STATUS_PROFILE_PENDING = "PENDING";

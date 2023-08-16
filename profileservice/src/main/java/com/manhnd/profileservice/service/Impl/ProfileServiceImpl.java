@@ -1,10 +1,12 @@
 package com.manhnd.profileservice.service.Impl;
 
+import com.google.gson.Gson;
 import com.manhnd.commonservice.commons.CommonException;
+import com.manhnd.commonservice.utils.Constant;
 import com.manhnd.profileservice.dto.ProfileDTO;
+import com.manhnd.profileservice.event.EventProducer;
 import com.manhnd.profileservice.repository.ProfileRepository;
 import com.manhnd.profileservice.service.ProfileService;
-import com.manhnd.profileservice.utils.Constant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,9 +22,11 @@ import java.util.Objects;
 @Slf4j
 public class ProfileServiceImpl implements ProfileService {
 
+    Gson gson = new Gson();
     @Autowired
     private ProfileRepository profileRepository;
-
+    @Autowired
+    EventProducer eventProducer;
     @Override
     public Flux<ProfileDTO> getAllProfiles() {
 
@@ -60,6 +64,35 @@ public class ProfileServiceImpl implements ProfileService {
         });
     }
 
+    @Override
+    public Mono<ProfileDTO> updateStatusProfile(ProfileDTO profileDTO) {
+        return getDetailProfileByEmail(profileDTO.getEmail())
+                .map(ProfileDTO::dtoToEntity)
+                .flatMap(profile -> {
+                    profile.setStatus(profileDTO.getStatus());
+                    return profileRepository.save(profile);
+                })
+                .map(ProfileDTO::entityToDto)
+                .doOnError(throwable -> log.error(throwable.getMessage()));
+    }
+
+    @Override
+    public Mono<ProfileDTO> updateInitialBlance(ProfileDTO profileDTO) {
+        return getDetailProfileByEmail(profileDTO.getEmail())
+                .map(ProfileDTO::dtoToEntity)
+                .map(ProfileDTO::entityToDto)
+                .doOnSuccess(dto -> {
+                    dto.setInitialBalance(profileDTO.getInitialBalance());
+                    eventProducer.send(Constant.UPDATE_INITIALBLANCE_TOPIC,gson.toJson(dto)).subscribe();
+                });
+    }
+
+    public Mono<ProfileDTO> getDetailProfileByEmail(String email){
+        return profileRepository.findByEmail(email)
+                .map(ProfileDTO::entityToDto)
+                .switchIfEmpty(Mono.error(new CommonException("PF03", "Profile not found", HttpStatus.NOT_FOUND)));
+    }
+
     public Mono<ProfileDTO> createProfile(ProfileDTO profileDTO) {
         return Mono.just(profileDTO)
                 .map(ProfileDTO::dtoToEntity)
@@ -69,8 +102,8 @@ public class ProfileServiceImpl implements ProfileService {
                 .doOnSuccess(dto -> {
                     if(Objects.equals(dto.getStatus(), Constant.STATUS_PROFILE_PENDING)) {
                         dto.setInitialBalance(profileDTO.getInitialBalance());
+                        eventProducer.send(Constant.PROFILE_ONBOARDING_TOPIC,gson.toJson(dto)).subscribe();
                     }
-                })
-                ;
+        });
     }
 }
