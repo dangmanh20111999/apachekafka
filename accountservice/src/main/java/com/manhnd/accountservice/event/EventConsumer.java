@@ -28,7 +28,7 @@ public class EventConsumer {
         KafkaReceiver.create(receiverOptions.subscription(Collections.singleton(Constant.PROFILE_ONBOARDING_TOPIC)))
                 .receive().subscribe(this::profileOnboarding);
         KafkaReceiver.create(receiverOptions.subscription(Collections.singleton(Constant.UPDATE_INITIALBLANCE_TOPIC)))
-                .receive().subscribe(this::profileUpdateInitialBlance);
+                .receive().subscribe(this::profileUpdateInitialBalance);
     }
     public void profileOnboarding(ReceiverRecord<String,String> receiverRecord){
         log.info("Profile Onboarding event",receiverRecord.value());
@@ -44,11 +44,14 @@ public class EventConsumer {
         });
     }
 
-    public void profileUpdateInitialBlance(ReceiverRecord<String,String> receiverRecord) {
+    public void profileUpdateInitialBalance(ReceiverRecord<String,String> receiverRecord) {
         ProfileDTO dto = gson.fromJson(receiverRecord.value(),ProfileDTO.class);
         AccountDTO accountDTO = new AccountDTO();
         accountDTO.setBalance(dto.getInitialBalance());
         accountDTO.setEmail(dto.getEmail());
-        accountService.updateInitialBlance(accountDTO).subscribe();
+        accountService.updateInitialBalance(accountDTO).subscribe(res -> {
+            dto.setRole(Constant.ROLE_ADMIN);
+            eventProducer.send(Constant.PROFILE_UPDATE_ROLE_TOPIC, gson.toJson(dto)).subscribe();
+        });
     }
 }

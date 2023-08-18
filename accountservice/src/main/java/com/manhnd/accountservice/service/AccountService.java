@@ -38,7 +38,7 @@ public class AccountService {
                 .switchIfEmpty(Mono.error(new CommonException("01","Not Found", HttpStatus.NOT_FOUND)));
     }
 
-    public Mono<AccountDTO> updateInitialBlance(AccountDTO accountDTO) {
+    public Mono<AccountDTO> updateInitialBalance(AccountDTO accountDTO) {
         return getDetailAccountByEmail(accountDTO)
                 .map(AccountDTO::dtoToEntity)
                 .flatMap(account -> {

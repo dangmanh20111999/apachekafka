@@ -5,8 +5,12 @@ public class Constant {
     public static final String UPDATE_INITIALBLANCE_TOPIC = "updateInitialBlance";
     public static final String PROFILE_ONBOARDED_TOPIC = "profileOnboarded";
 
+    public static final String PROFILE_UPDATE_ROLE_TOPIC = "updateRole";
+
     public static final String STATUS_PROFILE_PENDING = "PENDING";
     public static final String STATUS_PROFILE_ACTIVE = "ACTIVE";
+
+    public static final  String ROLE_ADMIN = "ADMIN";
 
     public static final String STATUS_PAYMENT_CREATING = "CREATING";
     public static final String STATUS_PAYMENT_REJECTED = "REJECTED";
