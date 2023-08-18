@@ -77,7 +77,7 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public Mono<ProfileDTO> updateInitialBlance(ProfileDTO profileDTO) {
+    public Mono<ProfileDTO> updateInitialBalance(ProfileDTO profileDTO) {
         return getDetailProfileByEmail(profileDTO.getEmail())
                 .map(ProfileDTO::dtoToEntity)
                 .map(ProfileDTO::entityToDto)
@@ -85,6 +85,18 @@ public class ProfileServiceImpl implements ProfileService {
                     dto.setInitialBalance(profileDTO.getInitialBalance());
                     eventProducer.send(Constant.UPDATE_INITIALBLANCE_TOPIC,gson.toJson(dto)).subscribe();
                 });
+    }
+
+    @Override
+    public Mono<ProfileDTO> updateRole(ProfileDTO profileDTO) {
+        return getDetailProfileByEmail(profileDTO.getEmail())
+                .map(ProfileDTO::dtoToEntity)
+                .flatMap(profile -> {
+                    profile.setRole(profileDTO.getRole());
+                    return profileRepository.save(profile);
+                })
+                .map(ProfileDTO::entityToDto)
+                .doOnError(throwable -> log.error(throwable.getMessage()));
     }
 
     public Mono<ProfileDTO> getDetailProfileByEmail(String email){

@@ -15,6 +15,7 @@ public interface ProfileService {
     Mono<ProfileDTO> saveProfile(ProfileDTO profileDTO);
     Mono<ProfileDTO> updateStatusProfile(ProfileDTO profileDTO);
 
-    Mono<ProfileDTO> updateInitialBlance(ProfileDTO profileDTO);
+    Mono<ProfileDTO> updateInitialBalance(ProfileDTO profileDTO);
+    Mono<ProfileDTO> updateRole(ProfileDTO profileDTO);
 
 }
