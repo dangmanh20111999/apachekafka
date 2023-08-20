@@ -135,6 +135,10 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<version>3.1.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

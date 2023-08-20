@@ -10,16 +10,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="accountservice" />
         <module name="commonservice" />
         <module name="profileservice" />
+        <module name="partition" />
+        <module name="accountservice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kafkapartitionservice" target="17" />
+      <module name="profileService" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="accountservice" options="-parameters" />
       <module name="commonservice" options="-parameters" />
+      <module name="partition" options="-parameters" />
       <module name="profileservice" options="-parameters" />
     </option>
   </component>
