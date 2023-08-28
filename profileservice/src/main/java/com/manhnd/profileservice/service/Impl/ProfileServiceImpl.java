@@ -2,12 +2,14 @@ package com.manhnd.profileservice.service.Impl;
 
 import com.google.gson.Gson;
 import com.manhnd.commonservice.commons.CommonException;
+import com.manhnd.commonservice.configuration.CommonConfiguration;
 import com.manhnd.commonservice.utils.Constant;
 import com.manhnd.profileservice.dto.ProfileDTO;
 import com.manhnd.profileservice.event.EventProducer;
 import com.manhnd.profileservice.repository.ProfileRepository;
 import com.manhnd.profileservice.service.ProfileService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.producer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -16,17 +18,22 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Map;
 import java.util.Objects;
 
 @Service
 @Slf4j
 public class ProfileServiceImpl implements ProfileService {
-
+    private static int partitionNumber = 0;
+    private static String key = "ManhND43@fpt.com";
     Gson gson = new Gson();
     @Autowired
     private ProfileRepository profileRepository;
     @Autowired
     EventProducer eventProducer;
+
+    @Autowired
+    CommonConfiguration commonConfiguration;
     @Override
     public Flux<ProfileDTO> getAllProfiles() {
 
@@ -83,7 +90,7 @@ public class ProfileServiceImpl implements ProfileService {
                 .map(ProfileDTO::entityToDto)
                 .doOnSuccess(dto -> {
                     dto.setInitialBalance(profileDTO.getInitialBalance());
-                    eventProducer.send(Constant.UPDATE_INITIALBLANCE_TOPIC,gson.toJson(dto)).subscribe();
+                    eventProducer.send(Constant.UPDATE_INITIALBLANCE_TOPIC,partitionNumber,gson.toJson(dto), key).subscribe();
                 });
     }
 
@@ -114,7 +121,7 @@ public class ProfileServiceImpl implements ProfileService {
                 .doOnSuccess(dto -> {
                     if(Objects.equals(dto.getStatus(), Constant.STATUS_PROFILE_PENDING)) {
                         dto.setInitialBalance(profileDTO.getInitialBalance());
-                        eventProducer.send(Constant.PROFILE_ONBOARDING_TOPIC,gson.toJson(dto)).subscribe();
+                        eventProducer.send(Constant.PROFILE_ONBOARDING_TOPIC,partitionNumber,gson.toJson(dto), key).subscribe();
                     }
         });
     }

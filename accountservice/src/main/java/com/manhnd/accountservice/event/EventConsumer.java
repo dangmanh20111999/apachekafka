@@ -17,6 +17,8 @@ import java.util.Collections;
 @Service
 @Slf4j
 public class EventConsumer {
+    private static int partitionNumber = 1;
+    private static String key = "ManhND43@fpt.com";
     Gson gson = new Gson();
     @Autowired
     AccountService accountService;
@@ -40,7 +42,7 @@ public class EventConsumer {
         accountDTO.setCurrency("USD");
         accountService.createNewAccount(accountDTO).subscribe(res ->{
             dto.setStatus(Constant.STATUS_PROFILE_ACTIVE);
-            eventProducer.send(Constant.PROFILE_ONBOARDED_TOPIC,gson.toJson(dto)).subscribe();
+            eventProducer.send(Constant.PROFILE_ONBOARDED_TOPIC,gson.toJson(dto), partitionNumber, key).subscribe();
         });
     }
 
@@ -51,7 +53,7 @@ public class EventConsumer {
         accountDTO.setEmail(dto.getEmail());
         accountService.updateInitialBalance(accountDTO).subscribe(res -> {
             dto.setRole(Constant.ROLE_ADMIN);
-            eventProducer.send(Constant.PROFILE_UPDATE_ROLE_TOPIC, gson.toJson(dto)).subscribe();
+            eventProducer.send(Constant.PROFILE_UPDATE_ROLE_TOPIC, gson.toJson(dto), partitionNumber, key).subscribe();
         });
     }
 }

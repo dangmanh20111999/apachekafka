@@ -1,8 +1,10 @@
 package com.manhnd.partition;
 
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Properties;
 
@@ -12,7 +14,7 @@ public class PartitionApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PartitionApplication.class, args);
 		String topicName = "profileOnboarding";
-		int partitionNumber = 0; // Partition mà bạn muốn gửi tin nhắn tới
+		int partitionNumber = 2; // Partition mà bạn muốn gửi tin nhắn tới
 
 		// Cấu hình producer
 		Properties props = new Properties();
@@ -41,6 +43,12 @@ public class PartitionApplication {
 
 		producer.close();
 	}
+
+	@Bean
+	NewTopic onBoardingProfile() {
+		return new NewTopic("profileOnboarding", 3, (short) 1);
+	}
+
 	}
 
 
