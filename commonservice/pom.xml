@@ -110,6 +110,7 @@
 						<useFile>false</useFile>
 					</configuration>
 				</plugin>
+
 			</plugins>
 		</pluginManagement>
 	</build>
