@@ -15,19 +15,10 @@ public class EventProducer {
     @Autowired
     private KafkaSender<String,String> sender;
 
-//    @Autowired
-//    private KafkaTemplate<String,String> kafkaTemplate;
-
     public Mono<String> send(String topicName,int partitionNumber, String message, String key){
-//        ProducerRecord<String, String> record = new ProducerRecord<>(topic, partition, key, message);
-//        return sender.send(record).then().thenReturn("OK");
+
         return sender.send(Mono.just(SenderRecord.create(new ProducerRecord<>(topicName, partitionNumber, key, message),message)))
                 .then()
                 .thenReturn("OK");
     }
-
-//    public void sendMessageToPartition(String topic, String message, String key, int partition) {
-//        ProducerRecord<String, String> record = new ProducerRecord<>(topic, partition, key, message);
-//        kafkaTemplate.send(record);
-//    }
 }
