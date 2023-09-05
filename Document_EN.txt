@@ -1,3 +1,32 @@
+I. Thì hiện tại đơn (Present Simple Tense)
+- Diễn tả một sự thật hiển nhiên được nhiều người biết, một điều gần như luôn đúng và khó thay đổi hay diễn tả tính cách, thói quen, đặc điểm của con người
++ Diễn tả một chân lý/sự thật hiển nhiên
+	- VD: Paris is the capital of France (Paris là thủ đô của Pháp) => capital: thủ đô
++ Diễn tả một sự thật (nghề nghiệp, tuổi tác, đặc điểm, tính cách, thói quen, cách sinh hoạt, một khả năng) về một người, vật/... ở thời điểm hiện tại
+	- VD: Her younger sister is 25 (Em gái của cô ấy 25 tuổi)
++ Diễn tả kế hoạch được sắp xếp cho tương lai, độ chắc chắn xảy ra cao và thường đi kèm với thời gian(lịch tàu, xe, máy bay, lịch học, lịch trình du lịch)
+	- VD: Our Chinese class starts at 6:30 pm (Lớp tiếng Hoa của chúng ta bắt đầu lúc 6h30 tối
++ Thay thế cho thì tương lai đơn sau liên từ chỉ thời gian(when,as,soon as, until,til,vv) hoặc sau liên từ chỉ điều kiện trong mệnh đề điều kiện thuộc câu điều kiện 1
+	- VD: I will call you as soon as I arrive in New York (tôi sẽ gọi bạn ngay khi tôi đến New York).
+	
+* Công thức:
+1. Khẳng định
+- Cấu trúc đi với động từ thường: S + V(s/es) + O => He works very hard.(Anh ấy làm việc rất chăm chỉ)
+- Cấu trúc đi với động từ "to be": S + be(am,is,are) + tính từ/cụm danh từ/v.v. => I am a student (Tôi là một học sinh)
+2. Phủ định
+- Cấu trúc đi với động từ thường: S + do not/does not + V_inf(động từ nguyên thể) => I don't usually get up early on weekends.(Tôi không thường xuyên dậy sớm vào cuối tuần)
+- Cấu trúc đi với động từ "to be": S + be(am,is,are) + not + tính từ/cụm danh từ => We aren't nurses (chúng tôi không phải là y tá)
+3. Câu hỏi Yes-No:
+- Cấu trúc đi với động từ thường: Do/Does + S + V_inf(động từ nguyên thể) => Do I need to work overtime this Friday? (Tôi có cần tăng ca thứ 6 này không) No you don't (Bạn không cần)
+- Cấu trúc đi với động từ "to be": Am/is/are + Chủ ngữ + tính từ/cụm danh từ/v.v. ? => Am I in Louisiana? (Tôi đang ở Louisiana à) No, you're not (Không)
+
+* Dấu hiệu nhận biết:
+- Có các dạng động từ "be" và động từ thường như trong các cấu trúc trên
+- Trong câu có chứa các trạng từ hoặc các cụm chỉ tần suất như:
+	+ every day/ every weekend/ every week/ every month/ every year...
+	+ rarely - hiếm khi, sometimes - thỉnh thoảng, often - thường thường, usually - thường xuyên, always - luôn luôn
+	+ once/ twice/ three times/ four times/ a day/ week/ month
+	
 - Danh từ ngôi thứ nhất: không thêm e hoặc es trong các hình thứ số ít hoặc nhiều
 	+ I(tôi), Me(tôi), My(của tôi), Mine(của tôi)
 	+ VD: I don’t stay/ doesn’t stay at home. => don't stay (vì I là ngôi thứ nhất)
@@ -16,3 +45,27 @@
 		+ sử dụng "does not": she, he, it và danh từ số ít
 		+ Simon  can't read English books: can't => diễn đạt sự không khả năng hoặc sự phản đối trong khả năng đọc sách của Simon
 		  (nếu dùng doesn't read thì nghĩa của câu sẽ bị thay đổi)
+		- nói về hành động của một nhóm người hoặc vật: thì động từ nguyên thể không thêm s hoặc es hoặc đứng với ngôi từ số nhiều
+		- nói về hành động của một người hoặc động vật duy nhất: thêm s,es cho ngôi từ he, she,it hoặc danh từ số ít
+		- động từ to be: am,is,are không cần thêm s,es
+		- động từ: he,she,it hoặc danh từ số ít: thêm e,es
+
+II: Hiện tại tiếp diễn (Present Continuous tense)
+- diễn tả một hành động xảy ra trong lúc nói hay xung quanh thời điểm nói, hành động này vẫn còn tiếp tục diễn ra (chưa kết thúc)
+- cách dùng:
+	+ Diễn tả hành động đang diễn ra tại thời điểm nói VD: Ba của chúng ta đang nấu ăn
+	+ Diễn tả hành động đang diễn ra xung quanh thời điểm nói, không phải ngay thời điểm nói VD: Dạo này, cô đang đọc một cuốn sách rất hay
+	+ Diễn tả một kế hoạch/dự định trong tương lai gần, có khả năng xảy ra cao và thường đi kèm với thời gian cụ thể VD: Chúng tôi sẽ tăng ca thứ Sáu này 
+	+ Diễn tả sự than phiền của người nói về một việc cứ lặp đi lặp lại và khiến họ khó chịu hay bực bội. Những trạng từ hay cụm từ diễn tả tần suất dày đặc
+	  (always – luôn luôn, constantly – rất thường xuyên, all the time – mọi lúc, v.v.)VD: Nhân viên đó luôn luôn trễ deadline
+* Công thức:
+- Khẳng định: S + am/is/are + V_ing + O
+- Phủ định: S + am/is/are + not + V_ing + O
+- Câu hỏi Yes-No: Am/is/are + S + V_ing + O?
+* Dấu hiệu nhận biết
+- Có cấu trúc "be + v_ing" với "be" được thay đổi theo chủ ngữ
+- Câu có chứa
+	+ Các (cụm) từ chỉ "hiện tại" : now - bây giờ, right now - ngay bây giờ, at the/this moment - tại thời điểm này
+	+ Các (cụm) từ chỉ khoảng thời gian xung quanh "hiện tại": these day, currently, this week, this month
+	+ Các (cụm) từ diễn tả tần suất dày đặc: always, constantly, all the time
+	+ Những mốc thời gian trong tương lai, gần với thời điểm nói: this weekend, this Friday, tonight, at the end of this year
