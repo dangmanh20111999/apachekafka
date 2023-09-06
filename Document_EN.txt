@@ -42,13 +42,23 @@ I. Thì hiện tại đơn (Present Simple Tense)
 	- sử dụng doesn't: He, she, it và danh từ số ít
 	- Câu phủ định:
 		+ sử dụng "do not": I, you, we, they và danh từ số nhiều
-		+ sử dụng "does not": she, he, it và danh từ số ít
+		+ sử dụng "does not": she, he, it (your) và danh từ số ít
 		+ Simon  can't read English books: can't => diễn đạt sự không khả năng hoặc sự phản đối trong khả năng đọc sách của Simon
 		  (nếu dùng doesn't read thì nghĩa của câu sẽ bị thay đổi)
 		- nói về hành động của một nhóm người hoặc vật: thì động từ nguyên thể không thêm s hoặc es hoặc đứng với ngôi từ số nhiều
 		- nói về hành động của một người hoặc động vật duy nhất: thêm s,es cho ngôi từ he, she,it hoặc danh từ số ít
 		- động từ to be: am,is,are không cần thêm s,es
 		- động từ: he,she,it hoặc danh từ số ít: thêm e,es
+	- Câu hỏi:
+		+ với động từ "tobe" ở thì hiện tại đơn:
+			- Khẳng định: Wh + am/is/are + S + ...? => VD: Where is it?
+			- Phủ định: Wh + am/is/are + not + S + ...? => VD: Where isn't your favourite food?
+		+ với trợ động từ "do/does" ở thì hiện tại đơn:
+			- Khẳng định: Wh + do/does + S + V? => VD: Where do you live?
+			- Phủ định: Wh + do/does + not + S + V? => Why doesn't your boss give you a raise?
+		+ với động từ khuyết thiếu
+			- Wh + DT khuyết thiếu + S + V...?
+		
 
 II: Hiện tại tiếp diễn (Present Continuous tense)
 - diễn tả một hành động xảy ra trong lúc nói hay xung quanh thời điểm nói, hành động này vẫn còn tiếp tục diễn ra (chưa kết thúc)
@@ -61,7 +71,8 @@ II: Hiện tại tiếp diễn (Present Continuous tense)
 * Công thức:
 - Khẳng định: S + am/is/are + V_ing + O
 - Phủ định: S + am/is/are + not + V_ing + O
-- Câu hỏi Yes-No: Am/is/are + S + V_ing + O?
+- Nghi vấn: Yes-No: Am/is/are + S + V_ing + O?
+- Câu hỏi: Từ để hỏi + Be + S + V_ing + O?
 * Dấu hiệu nhận biết
 - Có cấu trúc "be + v_ing" với "be" được thay đổi theo chủ ngữ
 - Câu có chứa
@@ -69,3 +80,6 @@ II: Hiện tại tiếp diễn (Present Continuous tense)
 	+ Các (cụm) từ chỉ khoảng thời gian xung quanh "hiện tại": these day, currently, this week, this month
 	+ Các (cụm) từ diễn tả tần suất dày đặc: always, constantly, all the time
 	+ Những mốc thời gian trong tương lai, gần với thời điểm nói: this weekend, this Friday, tonight, at the end of this year
+	+ I => am
+	+ You,we,they => are
+	+ He,she,it => is
