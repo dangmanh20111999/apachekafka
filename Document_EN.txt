@@ -80,6 +80,7 @@ II: Hiện tại tiếp diễn (Present Continuous tense)
 	+ Các (cụm) từ chỉ khoảng thời gian xung quanh "hiện tại": these day, currently, this week, this month
 	+ Các (cụm) từ diễn tả tần suất dày đặc: always, constantly, all the time
 	+ Những mốc thời gian trong tương lai, gần với thời điểm nói: this weekend, this Friday, tonight, at the end of this year
+	+ Trong câu có chứa các động từ gây chú ý: Look!watch(nhìn kìa), Listen(nghe này), Keep slient(hãy im lặng), watch out!/look out!(coi chừng)
 	+ I => am
 	+ You,we,they => are
-	+ He,she,it => is
+	+ He,she,it (my family) => is
