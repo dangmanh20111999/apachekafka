@@ -10,7 +10,7 @@ public class Constant {
     public static final String STATUS_PROFILE_PENDING = "PENDING";
     public static final String STATUS_PROFILE_ACTIVE = "ACTIVE";
 
-    public static final  String ROLE_ADMIN = "ADMIN";
+    public static final String ROLE_ADMIN = "ADMIN";
 
     public static final String STATUS_PAYMENT_CREATING = "CREATING";
     public static final String STATUS_PAYMENT_REJECTED = "REJECTED";

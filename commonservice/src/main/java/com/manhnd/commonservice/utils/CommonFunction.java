@@ -22,25 +22,26 @@ import java.util.Set;
 public class CommonFunction {
 
     @SneakyThrows
-    public static void jsonValidate(InputStream inputStream, String json)  {
+    public static void jsonValidate(InputStream inputStream, String json) {
         JsonSchema schema = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7).getSchema(inputStream);
         ObjectMapper om = new ObjectMapper();
         JsonNode jsonNode = om.readTree(json);
         Set<ValidationMessage> errors = schema.validate(jsonNode);
-        Map<String,String> stringSetMap = new HashMap<>();
-        for(ValidationMessage error: errors){
-            if(stringSetMap.containsKey(formatStringValidate(error.getPath()))){
+        Map<String, String> stringSetMap = new HashMap<>();
+        for (ValidationMessage error : errors) {
+            if (stringSetMap.containsKey(formatStringValidate(error.getPath()))) {
                 String message = stringSetMap.get(formatStringValidate(error.getPath()));
-                stringSetMap.put(formatStringValidate(error.getPath()),message + ", "+formatStringValidate(error.getMessage()));
-            }else{
-                stringSetMap.put(formatStringValidate(error.getPath()),formatStringValidate(error.getMessage()));
+                stringSetMap.put(formatStringValidate(error.getPath()), message + ", " + formatStringValidate(error.getMessage()));
+            } else {
+                stringSetMap.put(formatStringValidate(error.getPath()), formatStringValidate(error.getMessage()));
             }
         }
-        if(!errors.isEmpty()){
-            throw new ValidateException("RQ01",stringSetMap, HttpStatus.BAD_REQUEST);
+        if (!errors.isEmpty()) {
+            throw new ValidateException("RQ01", stringSetMap, HttpStatus.BAD_REQUEST);
         }
     }
-    public static String formatStringValidate(String message){
-        return message.replaceAll("\\$.","");
+
+    public static String formatStringValidate(String message) {
+        return message.replaceAll("\\$.", "");
     }
 }
